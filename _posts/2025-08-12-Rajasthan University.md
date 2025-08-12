@@ -43,10 +43,10 @@ It is important to note that while the portal is tailored for Rajasthan Universi
 ---
 
 ## 📖 Study Material – Course Wise
-- [B.Sc Notes](https://uor.edumate.life/courses/BSC)
-- [B.A Notes](https://uor.edumate.life/courses/BA)
-- [B.Com Notes](https://uor.edumate.life/courses/BCOM)
-- [M.A Notes](https://uor.edumate.life/courses/MA)
+- [B.Sc Notes](https://uor.edumate.life/courses/bsc)
+- [B.A Notes](https://uor.edumate.life/courses/ba)
+- [B.Com Notes](https://uor.edumate.life/courses/bcom)
+- [M.A Notes](https://uor.edumate.life/courses/ma)
 
 ---
 
