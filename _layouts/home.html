@@ -1,0 +1,195 @@
+---
+layout: default
+title: Edumate.life - Home
+refactor: true
+---
+
+{% include lang.html %}
+
+<style>
+  /* Simple modern card styling */
+  #post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  article.card-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+    width: 320px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  article.card-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgb(0 0 0 / 0.15);
+  }
+
+  .post-preview {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .post-preview img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+
+  .card-body {
+    padding: 1rem 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+
+  .card-text p {
+    flex-grow: 1;
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .post-meta {
+    font-size: 0.85rem;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .post-meta i {
+    margin-right: 4px;
+  }
+
+  .pin {
+    color: #d9534f;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Footer info about uor.edumate.life */
+  #about-edumate {
+    margin: 3rem auto 1.5rem;
+    max-width: 700px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  #about-edumate a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  #about-edumate a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<h1 class="text-center my-4" style="font-weight: 700; font-size: 2.2rem; color: #222;">
+  Welcome to Edumate.life
+</h1>
+
+<div id="post-list">
+  {% assign all_pinned = site.posts | where: 'pin', 'true' %}
+  {% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+  {% assign posts = '' | split: '' %}
+
+  {% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
+  {% assign visible_end = visible_start | plus: paginator.per_page %}
+
+  {% if all_pinned.size > visible_start %}
+    {% if all_pinned.size > visible_end %}
+      {% assign pinned_size = paginator.per_page %}
+    {% else %}
+      {% assign pinned_size = all_pinned.size | minus: visible_start %}
+    {% endif %}
+
+    {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
+      {% assign posts = posts | push: all_pinned[i] %}
+    {% endfor %}
+  {% else %}
+    {% assign pinned_size = 0 %}
+  {% endif %}
+
+  {% assign normal_size = paginator.posts | size | minus: pinned_size %}
+
+  {% if normal_size > 0 %}
+    {% if pinned_size > 0 %}
+      {% assign normal_start = 0 %}
+    {% else %}
+      {% assign normal_start = visible_start | minus: all_pinned.size %}
+    {% endif %}
+
+    {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
+
+    {% for i in (normal_start..normal_end) %}
+      {% assign posts = posts | push: all_normal[i] %}
+    {% endfor %}
+  {% endif %}
+
+  {% for post in posts %}
+    <article class="card-wrapper">
+      <a href="{{ post.url | relative_url }}" class="post-preview" aria-label="{{ post.title }}">
+        {% if post.image %}
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+          <img src="{{ src }}" alt="{{ alt }}">
+        {% endif %}
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <div class="card-text content">
+            <p>{% include post-description.html %}</p>
+          </div>
+          <div class="post-meta">
+            <div>
+              <i class="far fa-calendar"></i> {% include datetime.html date=post.date lang=lang %}
+            </div>
+            <div>
+              {% if post.pin %}
+                <span class="pin"><i class="fas fa-thumbtack"></i> {{ site.data.locales[lang].post.pin_prompt }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+  {% include post-paginator.html %}
+{% endif %}
+
+<section id="about-edumate" aria-label="About uor.edumate.life">
+  <h2 style="margin-bottom: 0.8rem; font-weight: 700;">About uor.edumate.life</h2>
+  <p>
+    Visit our sister site 
+    <a href="https://uor.edumate.life" target="_blank" rel="noopener noreferrer">uor.edumate.life</a> 
+    for more comprehensive academic resources, study materials, notes, and detailed guides tailored for students.
+    uor.edumate.life is dedicated to empowering learners with curated content across various subjects to support your academic journey.
+  </p>
+</section>
