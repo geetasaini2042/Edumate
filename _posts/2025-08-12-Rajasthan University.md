@@ -1,3 +1,9 @@
+---
+title: Rajasthan University 
+layout: post
+tags: [Ru, Rajasthan University, UOR, uniraj,bsc notes, University]
+categories: [notes,University, Rajasthan University]
+---
 # Welcome to Edumate – Rajasthan University Notes Portal
 
 The Rajasthan University Notes Portal is a dedicated platform created to provide students with easy access to high-quality academic resources. This portal is designed to support learners in their academic journey by offering a wide range of notes, previous year question papers, and updated syllabi across different courses and subjects. Whether you are preparing for your upcoming semester exams or simply want to strengthen your understanding of a topic, this portal ensures that you have reliable study material at your fingertips.
