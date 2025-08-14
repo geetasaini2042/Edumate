@@ -2,7 +2,7 @@
 title: Rajasthan University 
 layout: post
 tags: [Ru, Rajasthan University, UOR, uniraj,bsc notes, University]
-categories: [notes,University, Rajasthan University]
+categories: [Notes,University, Rajasthan University]
 ---
 # Welcome to Edumate – Rajasthan University Notes Portal
 
@@ -33,12 +33,12 @@ It is important to note that while the portal is tailored for Rajasthan Universi
 ---
 
 ## 🎓 Study Material – Semester Wise
-- [Semester 1](https://uor.edumate.life/semester/semester-1)
-- [Semester 2](https://uor.edumate.life/semester/semester-2)
-- [Semester 3](https://uor.edumate.life/semester/semester-3)
-- [Semester 4](https://uor.edumate.life/semester/semester-4)
+- [Semester 1](https://uor.edumate.life/semesters/semester-1)
+- [Semester 2](https://uor.edumate.life/semesters/semester-2)
+- [Semester 3](https://uor.edumate.life/semesters/semester-3)
+- [Semester 4](https://uor.edumate.life/semesters/semester-4)
 - [Semester 5](https://uor.edumate.life/semester/semester-5)
-- [Semester 6](https://uor.edumate.life/semester/semester-6)
+- [Semester 6](https://uor.edumate.life/semesters/semester-6)
 
 ---
 
@@ -46,8 +46,12 @@ It is important to note that while the portal is tailored for Rajasthan Universi
 - [B.Sc Notes](https://uor.edumate.life/courses/bsc)
 - [B.A Notes](https://uor.edumate.life/courses/ba)
 - [B.Com Notes](https://uor.edumate.life/courses/bcom)
+- [B.CA Notes](https://uor.edumate.life/courses/bca)
+- [B.BA Notes](https://uor.edumate.life/courses/bba)
 - [M.A Notes](https://uor.edumate.life/courses/ma)
-
+- [M.Sc Notes](https://uor.edumate.life/courses/ma)
 ---
 
-> **Note:** This is **not** the official Rajasthan University website. This portal is created solely for educational purposes to help students with study materials.
+> **Note:** This is **not** the official Rajasthan University website.
+
+>  This portal is created solely for educational purposes to help students with study materials.
