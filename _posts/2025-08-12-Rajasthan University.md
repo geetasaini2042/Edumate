@@ -49,7 +49,8 @@ It is important to note that while the portal is tailored for Rajasthan Universi
 - [B.CA Notes](https://uor.edumate.life/courses/bca)
 - [B.BA Notes](https://uor.edumate.life/courses/bba)
 - [M.A Notes](https://uor.edumate.life/courses/ma)
-- [M.Sc Notes](https://uor.edumate.life/courses/ma)
+- [M.Sc Notes](https://uor.edumate.life/courses/msc)
+
 ---
 
 > **Note:** This is **not** the official Rajasthan University website.
